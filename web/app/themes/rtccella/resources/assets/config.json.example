@@ -1,0 +1,12 @@
+{
+    "entry": {
+        "app": ["./scripts/app.js", "./styles/app.scss"],
+        "editor": ["./scripts/editor.js", "./styles/editor.scss"]
+    },
+    "parentTheme": "wp-lemon",
+    "sourceMaps": true,
+    "assetsPath": "/resources/assets/",
+    "scssSettingsFolder": "01-settings/",
+    "rootToThemePath": "/app/themes/wp-lemon-child/",
+    "browserSyncURL": "http://wplemon.local"
+}
