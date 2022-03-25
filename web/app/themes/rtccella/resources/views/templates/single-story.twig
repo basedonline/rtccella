@@ -1,0 +1,41 @@
+{% extends 'layouts/app.twig' %}
+{% import 'macros/media.twig' as media %}
+{% import 'macros/socials.twig' as socials %}
+{% block content %}
+    <article class="entry">
+        {% do action('wp-lemon/action/entry/before') %}
+        <div class="img-container">
+            {{
+                media.picture(
+                    post.thumbnail.id,
+                    'img-container__picture cluster-img',
+                    null,
+                    'large'
+                )
+            }}
+            <div class="img-container__outer">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10">
+                        <div class="img-container__inner wp-block__inner-container">
+                            <h1>
+                                {{ post.title }}
+                            </h1>
+                            <span>Lees het verhaal van {{ post.meta('name') }}</span>
+                            {{ post.content }}
+
+                            {{
+                                socials.share(
+                                    null,
+                                    ['linkedin', 'twitter', 'facebook', 'e-mail', 'whatsapp'],
+                                    share_context
+                                )
+                            }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'components/other-items.twig' %}
+        {% do action('wp-lemon/action/entry/after') %}
+    </article>
+{% endblock %}

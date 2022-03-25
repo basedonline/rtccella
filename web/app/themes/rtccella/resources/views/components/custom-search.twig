@@ -1,0 +1,20 @@
+{% set search_field_id = id_suffix ? 'search-bar-' ~ id_suffix : 'search-bar' %}
+<form action="{{ site.home }}" method="get" class="search-form search-form--custom" role="search">
+    <label for="s" class="visually-hidden-focusable">{{ __('Search', 'wp-lemon') }}</label>
+    <div class="input-group search-form__inputgroup">
+        <input name="s"
+            id="{{ search_field_id }}"
+            type="search"
+            class="form-control search-form__input"
+            data-swplive="true"
+            placeholder="Snel en eenvoudig zoeken"
+            aria-label="{{ __('Where are you searching for?', 'wp-lemon') }}"
+            aria-describedby="button-addon2" />
+        <div class="input-group-append">
+            <button class="btn btn-secondary search-form__btn" type="submit" id="button-addon2">
+                <i class="icon wp-lemon-icon-magnifier"></i>
+                <span class="d-md-inline">{{ __('Search', 'wp-lemon') }}</span>
+            </button>
+        </div>
+    </div>
+</form>

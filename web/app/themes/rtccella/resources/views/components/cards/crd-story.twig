@@ -1,0 +1,17 @@
+{% extends 'components/cards/crd-wrap.twig' %}
+{% set link = true %}
+{% set type = 'story' %}
+{% block card_inner %}
+    <div class="crd__bottom crd__text">
+        <header class="crd__header">
+            <h3 class="crd__title">
+                {{ post.title }}
+            </h3>
+        </header>
+        <div class="crd__excerpt">
+            <p>
+                Lees het verhaal van {{ post.meta('name') }}
+            </p>
+        </div>
+    </div>
+{% endblock %}

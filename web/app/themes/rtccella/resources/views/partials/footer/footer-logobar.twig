@@ -1,0 +1,16 @@
+<div class="footer__logobar">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <img class="logo footer__logo d-none d-md-inline"
+                    alt="Logo {{ site.name }}"
+                    width="{{ logo.footer.width }}"
+                    height="{{ logo.footer.height }}"
+                    src="{{ logo.footer.uri }}" />
+            </div>
+            <div class="col-12 col-md-8">
+                {% include 'blocks/contact-cta.twig' %}
+            </div>
+        </div>
+    </div>
+</div>

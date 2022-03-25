@@ -1,0 +1,8 @@
+{% extends 'layouts/app.twig' %}
+{% block content %}
+    <div class="entry">
+        {% do action('wp-lemon/action/entry/before') %}
+        {{ post.content }}
+        {% do action('wp-lemon/action/entry/after') %}
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% set holder_classes = 'col-12 col-md-6 col-lg-4' %}
+<section class="more-items {{ more.type ? 'more-items--' ~ more.type }}">
+    {% if more.items|length %}
+        {% if more.title %}
+            <h2>
+                {{ more.title }}
+            </h2>
+        {% endif %}
+        <div class="row archive">
+            {% for post in more.items %}
+                {% set delay = 100 * loop.index %}
+                {% include [
+                    'components/cards/crd-' ~ post.type ~ '.twig',
+                    'components/cards/crd-default.twig'
+                ] %}
+            {% endfor %}
+        </div>
+        {% if more.button %}
+            <nav class="archive-nav" {{ macros.animation(is_preview, 'fade-up', timeout) }}>
+                <a href="{{ more.button.link }}" class="theme-button">{{ more.button.text }}</a>
+            </nav>
+        {% endif %}
+    {% endif %}
+</section>

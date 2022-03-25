@@ -1,0 +1,29 @@
+.home-intro {
+
+	&__media-text {
+		margin-bottom: 30px;
+		overflow: hidden;
+		background-color: $white;
+		border-top-right-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		border-bottom-left-radius: $border-radius;
+	}
+
+	&__media-text-content {
+		padding: 30px;
+	}
+
+	&__media-text-picture {
+		height: 100%;
+
+		img {
+			object-fit: cover;
+			height: 100%;
+		}
+	}
+
+	h2 {
+		margin-top: 0;
+		color: $color-gold-drop;
+	}
+}
