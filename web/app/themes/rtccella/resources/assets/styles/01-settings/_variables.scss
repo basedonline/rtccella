@@ -1,4 +1,3 @@
-
 // ==========================================================================
 // Container widths
 // ==========================================================================
@@ -17,6 +16,7 @@ $container-max-widths: (
 	lg: 960px,
 	xl: 1140px,
 );
+
 // ==========================================================================
 // Project colors
 // https://www.color-blindness.com/color-name-hue/
@@ -25,21 +25,28 @@ $white: #ffffff;
 $black: #000000;
 $yellow: #f7d600;
 
+$color-deep-koamaru: #111e72;
+$color-gold-drop: #f27c00;
+$color-cerulean: #0090df;
+
 $base-color: $black;
-$highlight1: $yellow;
-$highlight2: $black;
+$highlight1: $color-deep-koamaru;
+$highlight2: $color-gold-drop;
 $background-color: #f9f9f9;
+$body-background: #f0f0f0;
 
 $brand-colors: (
 	"white":  $white,
 	"black":  $black,
-	"yellow": #e9c552,
-	"gray": #e9e9e9,
+	"orange": $color-gold-drop,
+	"dark-blue": $color-deep-koamaru,
 );
+$border-radius: 20px;
 
 // ==========================================================================
 // Font settings
 // ==========================================================================
+$base-font: "Assistant";
 
 // ==========================================================================
 // Link settings
@@ -52,6 +59,7 @@ $brand-colors: (
 // ==========================================================================
 // Header
 // ==========================================================================
+$logo-width-header: 230px;
 
 // ==========================================================================
 // Navigation | toggler
@@ -64,14 +72,24 @@ $brand-colors: (
 // ==========================================================================
 // Footer
 // ==========================================================================
+$footer-bg: $color-deep-koamaru;
 
 // ==========================================================================
 // Cards
 // ==========================================================================
+$card-shadow: none;
+$card-radius: 20px;
 
 // ==========================================================================
 // Buttons
 // ==========================================================================
+$button-font-size: pxtorem(20px);
+$button-font-weight: 600;
+$button-text-color: $color-deep-koamaru;
+$button-text-color-hover: $white;
+$button-background-color: transparent;
+$button-border-radius: 25px;
+$button-background-color-hover: darken($highlight2, 20%);
 
 // ==========================================================================
 // icons - Header

@@ -1,0 +1,29 @@
+h1 {
+	font-weight: 300;
+	line-height: 1.13;
+
+	@include media-breakpoint-up(md) {
+		font-size: pxtorem(72px);
+	}
+}
+
+h2 {
+	font-weight: 300;
+	line-height: 1.27;
+
+	@include media-breakpoint-up(md) {
+		font-size: pxtorem(52px);
+	}
+}
+
+h3 {
+	font-size: pxtorem(20px);
+}
+
+.theme-button,
+.wp-block-button__link {
+	@include shevron-button;
+
+	padding: 0.5em 1em;
+	border: 2px solid currentcolor;
+}

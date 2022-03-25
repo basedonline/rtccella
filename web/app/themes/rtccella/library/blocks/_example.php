@@ -18,6 +18,8 @@ use HighGround\Bulldozer\BlockRenderer;
  */
 class Example_Block extends BlockRenderer
 {
+
+
 	/**
 	 * Register a new ACF Block.
 	 *
@@ -29,43 +31,54 @@ class Example_Block extends BlockRenderer
 	public function block_register(): array
 	{
 		$block = [
-			'name'        => 'example',                                     // searches for resources/views/blocks/example.twig.
+			'name'        => 'example',
 			'title'       => __('Example name', 'wp-lemon-child'),
 			'description' => __('Example description', 'wp-lemon-child'),
-			'category'    => 'wp-lemon-blocks',                             // default custom category or add new ones.
-			'icon'        => 'desktop',                                     // regular dashicons without the 'dashicon-' prefix.
+			'category'    => 'wp-lemon-blocks',
+			'icon'        => 'desktop',
 			'keywords'    => [
-				_x('key 1', 'Block keyword', 'wp-lemon-child'),
-				_x('key 2', 'Block keyword', 'wp-lemon-child'),
-				_x('key 3', 'Block keyword', 'wp-lemon-child'),
+				_x('These', 'Block keyword', 'wp-lemon-child'),
+				_x('Are', 'Block keyword', 'wp-lemon-child'),
+				_x('The', 'Block keyword', 'wp-lemon-child'),
+				_x('Keywords', 'Block keyword', 'wp-lemon-child'),
 			],
-			'supports' => [
-				'align' => false,
+			'supports'    => [
 				'mode'  => false,
+				'align' => false,
+				'jsx'   => true,
 			],
 		];
 		return $block;
 	}
+
 
 	/**
 	 * Extend the base context of our block.
 	 * With this function we can add for example a query or
 	 * other custom content.
 	 *
-	 * @param array $context    Holds the current block data that you'll expand in this method.
+	 * @param array $context      Holds the block data.
 	 * @return array  $context    Returns the array with the extra content that merges into the original block context.
 	 */
 	public function block_context($context): array
 	{
+		//$allowed_blocks  = apply_filters("wp-lemon/filter/blocks/{$this->slug}/allowed-blocks", ['core/heading', 'core/paragraph']);
 
-		return $context;
+		$args = [
+			//'InnerBlocks'     => '<InnerBlocks allowedBlocks="' . esc_attr(wp_json_encode($allowed_blocks)) . '" />',
+		];
+
+		return array_merge($context, $args);
 	}
 
+
 	/**
-	 * Register fields via acfbuilder
+	 * Register fields to the block.
+	 *
+	 * The array is passed to the acf_register_block_type() function that registers the block with ACF.
 	 *
 	 * @link https://github.com/StoutLogic/acf-builder
-	 * @return object
+	 * @return FieldsBuilder
 	 */
 	public function add_fields(): object
 	{

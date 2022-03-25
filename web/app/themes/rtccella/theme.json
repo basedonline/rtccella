@@ -26,14 +26,14 @@
           "color": "#000000"
         },
         {
-          "name": "Yellow",
-          "slug": "yellow",
-          "color": "#e9c552"
+          "name": "Orange",
+          "slug": "orange",
+          "color": "#f27c00"
         },
         {
-          "name": "Gray",
-          "slug": "gray",
-          "color": "#e9e9e9"
+          "name": "Dark Blue",
+          "slug": "dark-blue",
+          "color": "#111e72"
         }
       ]
     }

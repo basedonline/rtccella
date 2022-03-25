@@ -32,10 +32,10 @@
     "license": "GPL-3.0",
     "devDependencies": {
         "@wordpress/browserslist-config": "^4.1",
-        "basebuilder-config": "^2.6",
-        "prettier": "^2.5",
+        "basebuilder-config": "^2.7",
+        "prettier": "^2.6",
         "prettier-plugin-twig-melody": "^0.4.6",
-        "stylelint": "^14.5"
+        "stylelint": "^14.6"
     },
     "dependencies": {
         "bootstrap": "^5.1.3",

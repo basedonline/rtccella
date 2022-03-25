@@ -25,6 +25,13 @@ use HighGround\Bulldozer\Site_Icons;
  */
 function theme_initialize()
 {
+
+	register_nav_menus(
+		[
+			'home_menu' => __('Home menu', 'wp-lemon-child'),
+		]
+	);
+
 	load_child_theme_textdomain('wp-lemon-child', get_stylesheet_directory() . '/resources/languages/');
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\theme_initialize');
@@ -51,6 +58,16 @@ function child_context($context)
 	];
 	$context['logo'] = array_replace_recursive($context['logo'], $logo_overwrite);
 
+	$home_nav = wp_nav_menu(
+		[
+			'echo'           => false,
+			'theme_location' => 'home_menu',
+			'menu_class'     => 'footer-menu nav',
+			'depth'          => 1,
+			'container'      => false,
+		]
+	);
+	$context['nav']['home'] = $home_nav;
 	return $context;
 }
 add_filter('timber_context', __NAMESPACE__ . '\\child_context');
