@@ -73,7 +73,8 @@
         "wpackagist-plugin/business-hours-indicator": "^2.3",
         "wpackagist-plugin/fluent-smtp": "^2.1",
         "satispress/searchwp": "^4.2",
-        "wpackagist-plugin/searchwp-live-ajax-search": "^1.6"
+        "wpackagist-plugin/searchwp-live-ajax-search": "^1.6",
+        "satispress/facetwp": "^3.9"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.6.2",
