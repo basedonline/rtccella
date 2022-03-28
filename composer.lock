@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71c684eaa36113cd0a6e6c1bb0418d46",
+    "content-hash": "eecc4034c44a32b98b977b21401b7df6",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -1004,6 +1004,24 @@
             "homepage": "https://www.advancedcustomfields.com"
         },
         {
+            "name": "satispress/facetwp",
+            "version": "3.9.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.studiolemon.nl/satispress/facetwp/3.9.6",
+                "shasum": "6b1553371ecebb8e818d7a4a77d8de3bd591333f"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "FacetWP, LLC",
+                "homepage": "https://facetwp.com/"
+            },
+            "description": "Advanced Filtering for WordPress"
+        },
+        {
             "name": "satispress/fluentformpro",
             "version": "4.3.3",
             "dist": {
@@ -1081,11 +1099,11 @@
         },
         {
             "name": "satispress/wp-lemon",
-            "version": "3.11.2",
+            "version": "3.11.4",
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.studiolemon.nl/satispress/wp-lemon/3.11.2",
-                "shasum": "9d5915544b6453aeb9d3bd7a97bad3f558f67125"
+                "url": "https://packagist.studiolemon.nl/satispress/wp-lemon/3.11.4",
+                "shasum": "243e94690cb18f19311719c7a5971aecfab59de1"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2087,15 +2105,15 @@
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts-reloaded",
-            "version": "2.23.2",
+            "version": "2.24.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/limit-login-attempts-reloaded/",
-                "reference": "tags/2.23.2"
+                "reference": "tags/2.24.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.23.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.24.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2201,12 +2219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "a1696aadf99f7ff55d44c56e7ebf54eace85310c"
+                "reference": "2fcd9551cd31a444bbc43d221d483fa658d4c21b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a1696aadf99f7ff55d44c56e7ebf54eace85310c",
-                "reference": "a1696aadf99f7ff55d44c56e7ebf54eace85310c",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/2fcd9551cd31a444bbc43d221d483fa658d4c21b",
+                "reference": "2fcd9551cd31a444bbc43d221d483fa658d4c21b",
                 "shasum": ""
             },
             "conflict": {
@@ -2439,7 +2457,7 @@
                 "phpoffice/phpspreadsheet": "<1.16",
                 "phpseclib/phpseclib": "<2.0.31|>=3,<3.0.7",
                 "phpservermon/phpservermon": "<=3.5.2",
-                "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
+                "phpunit/phpunit": "<4.8.28|>=5,<5.6.3",
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
                 "pimcore/pimcore": "<=10.3.2",
@@ -2658,7 +2676,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-22T13:13:56+00:00"
+            "time": "2022-03-26T01:31:07+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

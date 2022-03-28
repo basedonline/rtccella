@@ -22,8 +22,15 @@ add_action('wp-lemon/action/content/before', function () {
    if (is_singular('news')) {
       return;
    }
-
    $context = Timber::get_context();
+
+   $intro = get_field('intro', get_the_ID());
+
+   $context = [
+      'intro' => $intro,
+      'search' => 'job' === get_post_meta(get_the_ID(), '_archive_page', true) ? true : false,
+   ];
+
    Timber::render('partials/intro.twig', $context);
 });
 
@@ -52,3 +59,8 @@ add_filter('wp-lemon/filter/card/content/footer', function ($content, $id) {
    $context['fields'] = $fields;
    return Timber::compile('components/cards/card-footer.twig', $context);
 }, 10, 3);
+
+
+add_filter('wp-lemon/filter/footer/show-logo', function () {
+   return false;
+});

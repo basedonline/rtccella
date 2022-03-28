@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.9.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-02-21 13:16:58+0000\n"
+"PO-Revision-Date: 2022-03-21 11:40:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4194,7 +4194,7 @@ msgstr "Tags die stijlen en kenmerken van het thema aangeven."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:520
 msgid "The theme's screenshot URL."
-msgstr "De URL van het screenshot van het thema."
+msgstr "De URL van de schermafbeelding van het thema."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:515
 msgid "The minimum WordPress version required for the theme to work."
@@ -17297,7 +17297,7 @@ msgstr "Reactie plaatsen"
 
 #: wp-includes/comment-template.php:2498
 msgid "Cancel reply"
-msgstr "Antwoord annuleren"
+msgstr "Reactie annuleren"
 
 #. translators: %s: Author of the comment being replied to.
 #: wp-includes/comment-template.php:2006 wp-includes/comment-template.php:2493
