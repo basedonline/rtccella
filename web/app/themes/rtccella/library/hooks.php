@@ -22,8 +22,15 @@ add_action('wp-lemon/action/content/before', function () {
    if (is_singular('news')) {
       return;
    }
-
    $context = Timber::get_context();
+
+   $intro = get_field('intro', get_the_ID());
+
+   $context = [
+      'intro' => $intro,
+      'search' => 'job' === get_post_meta(get_the_ID(), '_archive_page', true) ? true : false,
+   ];
+
    Timber::render('partials/intro.twig', $context);
 });
 

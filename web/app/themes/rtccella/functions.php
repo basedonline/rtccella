@@ -22,7 +22,7 @@ use HighGround\Bulldozer\Bulldozer;
 function parent_loaded()
 {
 	$autoloader = new Autoloader();
-	$autoloader->child(['models', 'blocks']); // order in which our folders get autoloaded.
+	$autoloader->child(['models', 'blocks', 'controllers']); // order in which our folders get autoloaded.
 
 	$includes = [
 		'library/child-setup.php',
