@@ -26,4 +26,44 @@
 		margin-top: 0;
 		color: $color-gold-drop;
 	}
+
+	&__top {
+
+		ul {
+
+			li {
+				flex: 1;
+			}
+
+			li a {
+				display: block;
+				padding: 15px;
+				font-weight: 300;
+				color: white;
+				text-align: center;
+				background-color: $color-deep-koamaru;
+				border: solid 2px white;
+				border-bottom: 0;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+			}
+
+			li a:hover {
+				font-weight: bold;
+
+				// border-color: $color-gold-drop;
+			}
+
+			.current-menu-item a {
+				font-weight: bold;
+				background-color: $color-gold-drop;
+				border-color: $color-gold-drop;
+			}
+		}
+	}
+
+	&__alert {
+		display: flex;
+		justify-content: flex-end;
+	}
 }

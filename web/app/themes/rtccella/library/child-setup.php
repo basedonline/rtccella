@@ -62,7 +62,7 @@ function child_context($context)
 		[
 			'echo'           => false,
 			'theme_location' => 'home_menu',
-			'menu_class'     => 'footer-menu nav',
+			'menu_class'     => 'home-menu nav',
 			'depth'          => 1,
 			'container'      => false,
 		]

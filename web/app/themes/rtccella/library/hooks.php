@@ -47,7 +47,7 @@ add_filter('wp-lemon/filter/copyright-message', function ($message) {
    return Timber::compile('partials/footer/footer-bottom.twig', $context);
 });
 
-add_filter('wp-lemon/filter/card/content/footer', function ($content, $id, $fields) {
+add_filter('wp-lemon/filter/card/content/footer', function ($content, $id) {
    $context = Timber::get_context();
    $context['fields'] = $fields;
    return Timber::compile('components/cards/card-footer.twig', $context);
