@@ -59,3 +59,8 @@ add_filter('wp-lemon/filter/card/content/footer', function ($content, $id, $fiel
    $context['fields'] = $fields;
    return Timber::compile('components/cards/card-footer.twig', $context);
 }, 10, 3);
+
+
+add_filter('wp-lemon/filter/footer/show-logo', function () {
+   return false;
+});

@@ -1,4 +1,6 @@
 .footer {
+	line-height: 1.63;
+
 	@include media-breakpoint-up(lg) {
 		padding-top: 80px;
 	}
@@ -70,8 +72,16 @@
 	}
 }
 
+.table td {
+	padding: 0;
+}
+
 .clip {
 	position: absolute;
 	width: 0 !important;
 	height: 0 !important;
+}
+
+.widget__title {
+	font-size: pxtorem(28px);
 }
