@@ -30,13 +30,20 @@
 	&__top {
 
 		ul {
+			@include media-breakpoint-down(md) {
+				position: relative;
+				top: 30px;
+			}
 
 			li {
-				flex: 1;
+				display: flex;
+				align-items: center;
+				width: 50%;
 			}
 
 			li a {
-				display: block;
+				width: 100%;
+				height: 100%;
 				padding: 15px;
 				font-weight: 300;
 				color: white;
@@ -50,8 +57,6 @@
 
 			li a:hover {
 				font-weight: bold;
-
-				// border-color: $color-gold-drop;
 			}
 
 			.current-menu-item a {
@@ -63,7 +68,14 @@
 	}
 
 	&__alert {
+		position: relative;
+		bottom: 30px;
 		display: flex;
 		justify-content: flex-end;
+
+		@include media-breakpoint-down(md) {
+			position: relative;
+			bottom: 90px;
+		}
 	}
 }
