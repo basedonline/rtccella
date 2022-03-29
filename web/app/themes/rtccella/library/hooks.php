@@ -13,7 +13,7 @@ namespace WP_Lemon\Child;
 
 use Timber\Timber;
 
-add_action('wp-lemon/action/content/before', function () {
+add_action('wp-lemon/action/entry/before', function () {
 
    if (is_singular('story')) {
       return;
