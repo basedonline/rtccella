@@ -31,13 +31,10 @@
 
 		ul {
 
-			li {
-				flex: 1;
-			}
-
-			li a {
+			a {
 				display: block;
 				padding: 15px;
+				font-size: pxtorem(16px);
 				font-weight: 300;
 				color: white;
 				text-align: center;
@@ -46,18 +43,24 @@
 				border-bottom: 0;
 				border-top-left-radius: 20px;
 				border-top-right-radius: 20px;
+
+				@include media-breakpoint-up(lg) {
+					font-size: pxtorem(20px);
+				}
+
+				&:hover {
+					font-weight: bold;
+				}
 			}
 
-			li a:hover {
-				font-weight: bold;
+			li {
+				flex: 1;
 
-				// border-color: $color-gold-drop;
-			}
-
-			.current-menu-item a {
-				font-weight: bold;
-				background-color: $color-gold-drop;
-				border-color: $color-gold-drop;
+				&.current-menu-item a {
+					font-weight: bold;
+					background-color: $color-gold-drop;
+					border-color: $color-gold-drop;
+				}
 			}
 		}
 	}
