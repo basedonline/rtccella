@@ -76,6 +76,44 @@
 			}
 		}
 	}
+
+	&__logobar {
+
+		.row {
+			align-items: center;
+
+			img {
+				margin: 0;
+			}
+
+			.icons-list {
+
+				&__item {
+					margin-right: 25px;
+				}
+
+				&__icon {
+					color: $color-deep-koamaru;
+				}
+
+				&__iconholder {
+					background-color: white;
+				}
+
+				&__label {
+					font-weight: bold;
+					color: white;
+				}
+			}
+		}
+	}
+
+	&__widget {
+
+		&__title {
+			margin: 0;
+		}
+	}
 }
 
 .table td {
