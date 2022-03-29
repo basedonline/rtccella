@@ -2,7 +2,7 @@
 
 	.entry {
 		display: grid;
-		grid-template-rows: max-content auto auto;
+		grid-template-rows: max-content auto 1fr;
 
 		.intro {
 			grid-row: 1/-2;
