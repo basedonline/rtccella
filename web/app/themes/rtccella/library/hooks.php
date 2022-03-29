@@ -64,3 +64,21 @@ add_filter('wp-lemon/filter/card/content/footer', function ($content, $id, $fiel
 add_filter('wp-lemon/filter/footer/show-logo', function () {
    return false;
 });
+
+
+add_filter('body_class', function ($classes) {
+   $extra_classes = [];
+
+   if (is_singular('story')) {
+      return $classes;
+   }
+
+   if (is_singular('news')) {
+      return $classes;
+   }
+   $intro = get_field('intro', get_the_ID());
+
+   isset($intro['title']) ? $extra_classes[] = 'has-intro' : null;
+
+   return array_merge($classes, $extra_classes);
+});

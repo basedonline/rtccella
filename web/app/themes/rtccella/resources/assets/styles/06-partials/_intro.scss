@@ -1,6 +1,10 @@
 .intro {
 	position: relative;
-	overflow: hidden;
+	margin-bottom: 50px;
+
+	@include media-breakpoint-up(md) {
+		margin-bottom: 100px;
+	}
 
 	&__pusher {
 		padding-top: 60px;
@@ -42,8 +46,8 @@
 	}
 
 	&__title {
-		padding-bottom: 1em;
-		margin-bottom: 0;
+		padding-bottom: 30px;
+		margin-bottom: 0 !important;
 		font-weight: 300;
 	}
 
@@ -64,6 +68,7 @@
 		position: relative;
 		z-index: 2;
 		height: 10vw;
+		overflow: hidden;
 		clip-path: url("#intro-1");
 		background-color: $color-deep-koamaru;
 		transform: scale(1.05);

@@ -2,7 +2,7 @@
 
 /**
  * The main template file
- *
+ * Template Name: Landing
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
@@ -20,4 +20,4 @@ use Timber\Timber;
 $context         = Timber::get_context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
-Timber::render('templates/front-page.twig', $context);
+Timber::render('templates/landing.twig', $context);

@@ -9,7 +9,7 @@
                 Vacatures beschikbaar in het groene hart.
             </h2>
 
-            <div class="row">
+            <div class="row job-grid">
                 <aside class="col-12 col-md-4 sidebar">
                     <div class="filters">
                         {% for facet in facets %}
@@ -22,50 +22,9 @@
                         {% endfor %}
                     </div>
                 </aside>
-                <div class="col-12 col-md-8 facetwp-template job-grid">
+                <div class="col-12 col-md-8 facetwp-template job-holder">
                     {% for job in jobs %}
-                        {% set type = job.meta('location_type') %}
-                        {% set hours = job.meta('hours') %}
-                        {% if type == 'school' %}
-                            {% set school_id = job.meta('school') %}
-                            {% set school = Post(school_id) %}
-                            {% set school_name = school.title %}
-                            {% set city = school.location.city %}
-                        {% else %}
-                            {% set city = job.location.city %}
-                            {% set school_name = false %}
-                        {% endif %}
-                        <div class="job-card">
-                            <header class="job-card__header">
-                                <h3>
-                                    {{ job.title }}
-                                </h3>
-                            </header>
-                            <footer class="job-card__footer">
-                                <div class="job-card__meta">
-                                    {% if school_name %}
-                                        <i class="icon-school"></i>
-                                        {{ school_name }}
-                                    {% endif %}
-                                </div>
-                                <div class="job-card__meta">
-                                    {% if city %}
-                                        <i class="wp-lemon-icon-pin"></i>
-                                        {{ city }}
-                                    {% endif %}
-                                </div>
-                                <div class="job-card__meta">
-                                    {% if hours %}
-                                        <i class="wp-lemon-icon-location"></i>
-                                        {{ hours }} uur
-                                    {% endif %}
-                                </div>
-
-                                <a href="{{ job.link }}" class="job-card__link">
-                                    Bekijk vacature <i class="wp-lemon-icon-chevron-right"></i>
-                                </a>
-                            </footer>
-                        </div>
+                        {% include 'components/cards/card-job.twig' %}
                     {% endfor %}
                 </div>
             </div>
