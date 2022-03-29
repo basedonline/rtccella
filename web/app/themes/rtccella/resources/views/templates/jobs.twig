@@ -10,17 +10,19 @@
             </h2>
 
             <div class="row">
-                <aside class="col-12 col-md-4">
-                    {% for facet in facets %}
-                        <div class="facet">
-                            <h2>
-                                {{ facet.label }}
-                            </h2>
-                            {{ facet.shortcode|shortcodes }}
-                        </div>
-                    {% endfor %}
+                <aside class="col-12 col-md-4 sidebar">
+                    <div class="filters">
+                        {% for facet in facets %}
+                            <div class="facet">
+                                <h3>
+                                    {{ facet.label }}
+                                </h3>
+                                {{ facet.shortcode|shortcodes }}
+                            </div>
+                        {% endfor %}
+                    </div>
                 </aside>
-                <div class="col-12 col-md-8 facetwp-template">
+                <div class="col-12 col-md-8 facetwp-template job-grid">
                     {% for job in jobs %}
                         {% set type = job.meta('location_type') %}
                         {% set hours = job.meta('hours') %}
@@ -35,21 +37,33 @@
                         {% endif %}
                         <div class="job-card">
                             <header class="job-card__header">
-                                {{ job.title }}
+                                <h3>
+                                    {{ job.title }}
+                                </h3>
                             </header>
                             <footer class="job-card__footer">
-                                {% if school_name %}
-                                    <i class="icon-school"></i>
-                                    {{ school_name }}
-                                {% endif %}
-                                {% if city %}
-                                    <i class="wp-lemon-icon-pin"></i>
-                                    {{ city }}
-                                {% endif %}
-                                {% if hours %}
-                                    <i class="wp-lemon-icon-location"></i>
-                                    {{ hours }}
-                                {% endif %}
+                                <div class="job-card__meta">
+                                    {% if school_name %}
+                                        <i class="icon-school"></i>
+                                        {{ school_name }}
+                                    {% endif %}
+                                </div>
+                                <div class="job-card__meta">
+                                    {% if city %}
+                                        <i class="wp-lemon-icon-pin"></i>
+                                        {{ city }}
+                                    {% endif %}
+                                </div>
+                                <div class="job-card__meta">
+                                    {% if hours %}
+                                        <i class="wp-lemon-icon-location"></i>
+                                        {{ hours }} uur
+                                    {% endif %}
+                                </div>
+
+                                <a href="{{ job.link }}" class="job-card__link">
+                                    Bekijk vacature <i class="wp-lemon-icon-chevron-right"></i>
+                                </a>
                             </footer>
                         </div>
                     {% endfor %}

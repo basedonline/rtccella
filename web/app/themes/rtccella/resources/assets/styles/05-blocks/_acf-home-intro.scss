@@ -49,7 +49,7 @@
 				}
 
 				&:hover {
-					font-weight: bold;
+					font-weight: 700;
 				}
 			}
 
@@ -57,7 +57,7 @@
 				flex: 1;
 
 				&.current-menu-item a {
-					font-weight: bold;
+					font-weight: 700;
 					background-color: $color-gold-drop;
 					border-color: $color-gold-drop;
 				}

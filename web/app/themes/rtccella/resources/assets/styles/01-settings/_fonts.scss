@@ -5,7 +5,7 @@
 	font-style: normal;
 	font-weight: 300;
 	src: local(""),
-		url("../fonts/assistant/assistant-v15-latin-300.woff2") format("woff2"), 
+		url("../fonts/assistant/assistant-v15-latin-300.woff2") format("woff2"),
 		url("../fonts/assistant/assistant-v15-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -16,7 +16,7 @@
 	font-style: normal;
 	font-weight: 400;
 	src: local(""),
-		url("../fonts/assistant/assistant-v15-latin-regular.woff2") format("woff2"), 
+		url("../fonts/assistant/assistant-v15-latin-regular.woff2") format("woff2"),
 		url("../fonts/assistant/assistant-v15-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -27,6 +27,59 @@
 	font-style: normal;
 	font-weight: 700;
 	src: local(""),
-		url("../fonts/assistant/assistant-v15-latin-700.woff2") format("woff2"), 
+		url("../fonts/assistant/assistant-v15-latin-700.woff2") format("woff2"),
 		url("../fonts/assistant/assistant-v15-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+// ==========================================================================
+// Iconfont
+// ==========================================================================
+
+@font-face {
+	font-family: icomoon;
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/icomoon/fonts/icomoon.eot?ol7f71");
+	src: url("../fonts/icomoon/fonts/icomoon.eot?ol7f71#iefix") format("embedded-opentype"),
+		url("../fonts/icomoon/fonts/icomoon.ttf?ol7f71") format("truetype"),
+		url("../fonts/icomoon/fonts/icomoon.woff?ol7f71") format("woff"),
+		url("../fonts/icomoon/fonts/icomoon.svg?ol7f71#icomoon") format("svg");
+	font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: icomoon !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	text-transform: none;
+	speak: never;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-play::before {
+	content: "\e900";
+}
+
+.icon-clock::before {
+	content: "\e901";
+}
+
+.icon-link::before {
+	content: "\e902";
+}
+
+.icon-school::before {
+	content: "\e903";
+}
+
+.icon-notification::before {
+	content: "\e904";
 }

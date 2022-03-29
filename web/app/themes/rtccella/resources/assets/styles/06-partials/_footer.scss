@@ -26,14 +26,14 @@
 	&__blue {
 		z-index: 2;
 		height: 70%;
-		clip-path: url(#footer-2);
+		clip-path: url("#footer-2");
 		background-color: $color-deep-koamaru;
 	}
 
 	&__orange {
 		width: 50%;
 		height: 100%;
-		clip-path: url(#footer-1);
+		clip-path: url("#footer-1");
 		background-color: $color-gold-drop;
 	}
 
@@ -45,7 +45,7 @@
 
 	&__white {
 		z-index: 3;
-		clip-path: url(#footer-2);
+		clip-path: url("#footer-2");
 		background-color: white;
 	}
 
@@ -53,7 +53,7 @@
 		right: auto;
 		left: 0;
 		width: 40%;
-		clip-path: url(#footer-3);
+		clip-path: url("#footer-3");
 		background-color: $color-cerulean;
 	}
 
