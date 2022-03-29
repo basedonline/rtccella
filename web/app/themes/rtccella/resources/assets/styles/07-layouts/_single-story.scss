@@ -1,0 +1,44 @@
+.single-story__content {
+	border-radius: 20px;
+
+	span {
+		display: block;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		font-size: larger;
+		font-weight: bold;
+	}
+
+	.share-buttons {
+
+		&__list {
+			display: flex;
+			justify-content: left;
+		}
+
+		&__link {
+			// margin-top: 0;
+			// margin-right: 0;
+			margin: 0;
+			color: black;
+			background: transparent;
+		}
+
+		&__iconholder {
+			// margin: 0;
+			background-color: transparent;
+		}
+
+		&__label {
+			display: none;
+		}
+	}
+}
+
+.more-items--story {
+
+	nav {
+		display: flex;
+		justify-content: center;
+	}
+}
