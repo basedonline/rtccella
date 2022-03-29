@@ -8,6 +8,7 @@
 
 .filters {
 	padding: 30px;
+	margin-bottom: 30px;
 	background-color: $white;
 	border-radius: $border-radius;
 
@@ -20,4 +21,42 @@
 	color: $white;
 	background-color: $color-gold-drop;
 	border-radius: $border-radius;
+}
+
+.facetwp-input-wrap {
+	display: block;
+	width: 100%;
+}
+
+.facetwp-facet {
+	margin-bottom: 30px !important;
+}
+
+.facet:last-child .facetwp-facet {
+	margin-bottom: 0 !important;
+}
+
+input {
+	background-color: $color-seashell;
+	border: 0;
+	border-radius: 5px;
+}
+
+.facetwp-slider-reset {
+	display: inline-block;
+	width: auto;
+	padding: 10px 0 !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+.facetwp-slider-label {
+
+	&::before {
+		content: "Tussen ";
+	}
+
+	&::after {
+		content: " uur";
+	}
 }

@@ -86,8 +86,9 @@
 		justify-content: flex-end;
 		margin-bottom: 30px;
 
-		@include media-breakpoint-down(md) {
-			position: relative;
+		@include media-breakpoint-up(md) {
+			align-items: flex-start;
+			margin-bottom: 0;
 		}
 	}
 }

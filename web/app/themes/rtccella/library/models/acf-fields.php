@@ -55,12 +55,12 @@ add_filter('wp-lemon/filter/model/acf-fields/job', function ($fields) {
          'label' => __('Type baan', 'wp-lemon'),
          'allow_null' => 1,
          'choices' => [
-            'leerkracht' => __('Leerkracht', 'wp-lemon'),
-            'vervangend' => __('vervangend', 'wp-lemon'),
-            'oop' => __('Onderwijs Ondersteunend Personeel', 'wp-lemon'),
-            'ib' => __('IB\'er', 'wp-lemon'),
-            'lio' => __('Lio\'er', 'wp-lemon'),
-            'directeur' => __('Directeurd', 'wp-lemon'),
+            'leerkracht'    => __('Leerkracht', 'wp-lemon'),
+            'vervangend'    => __('vervangend', 'wp-lemon'),
+            'oop'           => __('Onderwijs Ondersteunend Personeel', 'wp-lemon'),
+            'ib'            => __('IB\'er', 'wp-lemon'),
+            'lio'           => __('Lio\'er', 'wp-lemon'),
+            'directeur'     => __('Directeur', 'wp-lemon'),
             'zij-instromer' => __('Zij-instromer', 'wp-lemon'),
          ]
       ])
@@ -104,6 +104,27 @@ add_action(
          ]);
 
       $school_fields->setLocation('post_type', '==', 'school');
+      acf_add_local_field_group($school_fields->build());
+
+
+      /**
+       * Extra fields for jobs.
+       */
+      $school_fields = new FieldsBuilder(
+         'subscriber',
+         [
+            'title' => __('Vacature alerts', 'wp-lemon'),
+            'style' => 'seamless',
+         ]
+      );
+      $school_fields
+         ->addText('name', [
+            'label' => 'Naam',
+            'instructions' => '',
+            'required' => 1,
+         ]);
+
+      $school_fields->setLocation('post_type', '==', 'subscribers');
       acf_add_local_field_group($school_fields->build());
    }
 );

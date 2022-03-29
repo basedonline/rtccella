@@ -34,7 +34,7 @@ $highlight1: $color-deep-koamaru;
 $highlight2: $color-gold-drop;
 $background-color: #f9f9f9;
 $body-background: #f0f0f0;
-
+$color-seashell: #f1f1f1;
 $brand-colors: (
 	"white":  $white,
 	"black":  $black,
@@ -75,20 +75,20 @@ $nav-text: (
 	"font-weight": 400,
 	"font-size": 0.875rem,
 	"transform": none,
-	"color": $highlight1,
-	"hover": white,
+	"color": $base-color,
+	"hover":  $color-gold-drop,
 	"active": $color-gold-drop
 );
 
 $nav-dropdown: (
-	"bg": $base-color,
+	"bg": $background-color,
 	"bg-hover": $color-gold-drop,
 	"bg-active":$color-gold-drop,
-	"color": white,
+	"color": $highlight1,
 	"color-hover": $white,
-	"color-active": $base-color,
-	"color-mobile": white,
-	"color-mobile-hover": $base-color
+	"color-active": $white,
+	"color-mobile": $base-color,
+	"color-mobile-hover": $highlight1
 );
 
 // ==========================================================================

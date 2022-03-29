@@ -21,3 +21,84 @@
 		}
 	}
 }
+
+.nav-link {
+	font-weight: 700;
+	text-transform: uppercase;
+
+	@include media-breakpoint-up(lg) {
+		color: $base-color;
+	}
+
+	.current-active-archive &,
+	.current-menu-ancestor &,
+	.current-page-ancestor &,
+	.current-menu-item & {
+		color: $highlight2;
+
+		@include media-breakpoint-up(lg) {
+			color: $highlight2;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		@include media-breakpoint-up(lg) {
+			color: $highlight2;
+		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+
+	.offcanvas-title {
+		color: $highlight1;
+	}
+}
+
+.dropdown-menu {
+	overflow: hidden;
+
+	@include media-breakpoint-up(lg) {
+		border-radius: 10px;
+		box-shadow: 0 0 10px 0 rgba(50, 50, 50, 50%);
+	}
+
+	@include media-breakpoint-up(lg) {
+		transform: translateY(10px);
+	}
+}
+
+.dropdown-toggle::after {
+	border-top: 0.4em solid;
+	border-right: 0.4em solid transparent;
+	border-left: 0.4em solid transparent;
+
+	@include media-breakpoint-up(lg) {
+		border-top-color: $highlight2;
+	}
+}
+
+.current-menu-parent {
+
+	.dropdown-toggle::after {
+		@include media-breakpoint-up(lg) {
+			border-top-color: $highlight2;
+		}
+	}
+}
+
+.dropdown-item {
+
+	&.active {
+		color: $base-color;
+
+		@include media-breakpoint-up(lg) {
+			color: $white;
+		}
+	}
+}
+
+.navbar-toggler {
+	border-radius: 5px;
+}

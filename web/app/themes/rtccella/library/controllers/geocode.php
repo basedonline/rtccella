@@ -9,16 +9,17 @@
 
 namespace WP_Lemon\Child\Controllers;
 
-add_action('acf/save_post', __NAMESPACE__ . '\\maybe_update_geocode', 5);
+add_action('acf/save_post', __NAMESPACE__ . '\\maybe_update_geocode');
 
 function maybe_update_geocode($post_id)
 {
-   $fields = $_POST['acf'];
+   $type = get_field('location', $post_id);
    $parent_id =  $post_id;
 
-   if ($fields['location_type'] === 'school') {
-      $parent_id = $fields['school'];
+   if ($type !== 'own') {
+      $parent_id = get_field('school', $post_id);
    }
+
    $location = get_field('location', $parent_id);
 
    if (empty($location)) {

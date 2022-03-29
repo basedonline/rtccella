@@ -1,10 +1,13 @@
-.home-intro__alert {
+.alert-button {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	color: $color-gold-drop;
+	background-color: transparent;
+	border: 0;
 
-	.alert-button {
-		display: block;
-		font-weight: bold;
-		color: $color-gold-drop;
-		background-color: transparent;
-		border: 0;
+	i {
+		margin-left: 10px;
+		font-size: 1.2em;
 	}
 }

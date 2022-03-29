@@ -21,11 +21,13 @@
                             </div>
                         {% endfor %}
                     </div>
+                    {% include 'components/cards/card-job-alert.twig' %}
                 </aside>
                 <div class="col-12 col-md-8 facetwp-template job-holder">
                     {% for job in jobs %}
                         {% include 'components/cards/card-job.twig' %}
                     {% endfor %}
+                    {{ pager }}
                 </div>
             </div>
         </div>

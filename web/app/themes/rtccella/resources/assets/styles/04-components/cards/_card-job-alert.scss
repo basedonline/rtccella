@@ -1,0 +1,25 @@
+.crd--job-alert {
+	color: $white;
+	background-color: $color-gold-drop;
+
+	.crd {
+
+		&__header {
+			display: flex;
+			align-items: center;
+			font-size: pxtorem(20px);
+
+			i {
+				margin-left: auto;
+			}
+		}
+
+		&__footer {
+			margin-top: 30px;
+
+			a {
+				color: $white;
+			}
+		}
+	}
+}

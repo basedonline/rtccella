@@ -48,10 +48,7 @@ $context['facets'] = [
    [
       'label' => __('Aantal uur', 'wp-lemon'),
       'shortcode' => '[facetwp facet="hours"]',
-   ],
-   'pager' => [
-      'shortcode' => '[facetwp facet="pager"]',
-   ],
+   ]
 ];
-
+$context['pager'] =  apply_shortcodes('[facetwp facet="pager"]');
 Timber\Timber::render('templates/jobs.twig', $context);

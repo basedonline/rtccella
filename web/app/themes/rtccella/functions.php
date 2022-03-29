@@ -26,6 +26,7 @@ function parent_loaded()
 
 	$includes = [
 		'library/child-setup.php',
+		'library/classes/class-mailnotification.php',
 		'library/hooks.php',
 	];
 
