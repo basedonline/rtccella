@@ -3,4 +3,28 @@
 	margin-bottom: 30px;
 	background-color: $color-gold-drop;
 	border-radius: $border-radius;
+
+	@include media-breakpoint-down(sm) {
+
+		::placeholder {
+			font-size: smaller;
+		}
+	}
+
+	::placeholder {
+		color: $color-gold-drop;
+		opacity: 1;
+	}
+
+	button {
+		color: $color-gold-drop;
+		background-color: #ebebeb;
+
+		@include media-breakpoint-down(sm) {
+
+			span {
+				display: none;
+			}
+		}
+	}
 }
