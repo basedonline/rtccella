@@ -1,4 +1,7 @@
 .footer {
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
 	line-height: 1.63;
 
 	@include media-breakpoint-up(lg) {
@@ -8,6 +11,7 @@
 	&__shapes {
 		position: relative;
 		height: 10vw;
+		overflow: hidden;
 	}
 
 	&__shape {
@@ -16,6 +20,7 @@
 		bottom: 0;
 		width: 100%;
 		height: 100%;
+		transform: scale(1.05);
 	}
 
 	&__blue {
@@ -35,6 +40,7 @@
 	&__bottom-shapes {
 		position: relative;
 		height: 10vw;
+		overflow: hidden;
 	}
 
 	&__white {
