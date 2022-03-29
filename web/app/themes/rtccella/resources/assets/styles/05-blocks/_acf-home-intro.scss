@@ -1,12 +1,24 @@
 .home-intro {
+	margin-top: 30px;
+
+	@include media-breakpoint-up(md) {
+		margin-top: 60px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		margin-top: 0;
+	}
 
 	&__media-text {
 		margin-bottom: 30px;
 		overflow: hidden;
 		background-color: $white;
-		border-top-right-radius: $border-radius;
 		border-bottom-right-radius: $border-radius;
 		border-bottom-left-radius: $border-radius;
+
+		@include media-breakpoint-up(md) {
+			border-top-right-radius: $border-radius;
+		}
 	}
 
 	&__media-text-content {
@@ -32,7 +44,6 @@
 		ul {
 			@include media-breakpoint-down(md) {
 				position: relative;
-				top: 30px;
 			}
 		}
 
@@ -71,13 +82,12 @@
 
 	&__alert {
 		position: relative;
-		bottom: 30px;
 		display: flex;
 		justify-content: flex-end;
+		margin-bottom: 30px;
 
 		@include media-breakpoint-down(md) {
 			position: relative;
-			bottom: 90px;
 		}
 	}
 }

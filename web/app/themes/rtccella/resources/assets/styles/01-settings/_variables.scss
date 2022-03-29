@@ -64,10 +64,32 @@ $logo-width-header: 230px;
 // ==========================================================================
 // Navigation | toggler
 // ==========================================================================
+$menu-toggle-hamburger-color: rgba(white, 100%);
+$menu-toggle-background-color: $highlight1;
+$menu-toggle-border-color: transparent;
 
 // ==========================================================================
 // Navigation | menu
 // ==========================================================================
+$nav-text: (
+	"font-weight": 400,
+	"font-size": 0.875rem,
+	"transform": none,
+	"color": $highlight1,
+	"hover": white,
+	"active": $color-gold-drop
+);
+
+$nav-dropdown: (
+	"bg": $base-color,
+	"bg-hover": $color-gold-drop,
+	"bg-active":$color-gold-drop,
+	"color": white,
+	"color-hover": $white,
+	"color-active": $base-color,
+	"color-mobile": white,
+	"color-mobile-hover": $base-color
+);
 
 // ==========================================================================
 // Footer
