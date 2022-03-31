@@ -1,27 +1,28 @@
 {% extends 'layouts/block-wrap.twig' %}
 {% import 'macros/media.twig' as media %}
 {% block block__inner %}
-    <div class="home-intro__top">
-        <div class="row g-0">
-            <div class="col-12 col-md-6 home-intro__alert order-md-2">
-                <button class="alert-button" id="alert-button">
-                    Vacature alert <i class="icon-notification"></i>
-                </button>
-            </div>
-            <div class="col-12 col-md-6">
-                {{ nav.home }}
-            </div>
-        </div>
-    </div>
-    <div class="home-intro__media-text">
-        <div class="row g-0">
-            <div class="col-12 col-md-6">
-                <div class="home-intro__media-text-content">
-                    {{ InnerBlocks }}
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                {{
+	<div class="home-intro__top">
+		<div class="row g-0">
+			<div class="col-12 col-md-6 home-intro__alert order-md-2">
+				<button class="alert-button" id="alert-button">
+					Vacature alert
+					<i class="icon-notification"></i>
+				</button>
+			</div>
+			<div class="col-12 col-md-6">
+				{{ nav.home }}
+			</div>
+		</div>
+	</div>
+	<div class="home-intro__media-text">
+		<div class="row g-0">
+			<div class="col-12 col-md-6">
+				<div class="home-intro__media-text-content">
+					{{ InnerBlocks }}
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				{{
                     media.picture(
                         fields.image,
                         'home-intro__media-text-picture',
@@ -29,8 +30,8 @@
                         'large'
                     )
                 }}
-            </div>
-        </div>
-    </div>
-    {% include 'components/custom-search.twig' %}
+			</div>
+		</div>
+	</div>
+	{% include 'components/custom-search.twig' %}
 {% endblock %}
