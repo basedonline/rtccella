@@ -1,0 +1,33 @@
+.latest-jobs {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 20px;
+	width: 100%;
+
+	@include media-breakpoint-down(lg) {
+		grid-template-columns: auto;
+		gap: 0;
+	}
+
+	&__jobs {
+		display: grid;
+		grid-template-rows: repeat(3, max-content);
+
+		@include media-breakpoint-up(lg) {
+
+			a {
+				max-height: 119px;
+			}
+		}
+	}
+
+	.card-holder {
+		justify-self: center;
+		width: 350px;
+		height: 100%;
+
+		@include media-breakpoint-down(lg) {
+			width: 100%;
+		}
+	}
+}
