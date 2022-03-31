@@ -1,3 +1,19 @@
-.video-card{
+.video-card {
+	margin-top: 20px;
+	margin-bottom: 30px;
 
+	iframe {
+		width: 100%;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+
+	h2 {
+		padding: 20px;
+		margin: 0;
+		color: white;
+		background-color: $color-deep-koamaru;
+		border-bottom-right-radius: 20px;
+		border-bottom-left-radius: 20px;
+	}
 }
