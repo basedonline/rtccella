@@ -1,0 +1,56 @@
+{% extends 'mail/mail-base.twig' %}
+{% set sentence = (jobs|length) > 1 ? 'zijn de volgende vacatures' : 'is de volgende vacature' %}
+{% block content %}
+    Beste {{ name }},<br />
+    <br />
+    Afgelopen week {{ sentence }} geplaats.<br />
+    <br /><br />
+    {% for job in jobs %}
+        {% set type = job.meta('location_type') %}
+        {% set hours = job.meta('hours') %}
+        {% if type == 'school' %}
+            {% set school_id = job.meta('school') %}
+            {% set school = Post(school_id) %}
+            {% set school_name = school.title %}
+            {% set city = school.location.city %}
+        {% else %}
+            {% set city = job.location.city %}
+            {% set school_name = false %}
+        {% endif %}
+
+        <h3>
+            <a href=" {{ job.link }}">{{ job.title }}</a>
+        </h3>
+        <table>
+            <tr>
+                {% if school_name %}
+                    <td>
+                        <strong>Naam school:</strong>
+                    </td>
+                    <td>
+                        {{ school_name }}
+                    </td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>
+                    <strong>Plaats:</strong>
+                </td>
+                <td>
+                    {{ city }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Aantal uur:</strong>
+                </td>
+                <td>
+                    {{ hours }}
+                </td>
+            </tr>
+        </table>
+        <p>
+            {{ lemon_excerpt(job, 300) }}
+        </p>
+    {% endfor %}
+{% endblock %}

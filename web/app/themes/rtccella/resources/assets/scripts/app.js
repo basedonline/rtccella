@@ -6,15 +6,20 @@
 import 'bootstrap/js/dist/button';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/offcanvas';
+import 'bootstrap/js/dist/modal';
+
+
 
 import frontend from 'parentThemeScripts/components/functions-frontend';
 import { domReady } from 'parentThemeScripts/components/domReady';
+import modal from './components/modal';
 
 /**
  * Run the application when the DOM is ready.
  */
 domReady(() => {
     frontend();
+    modal();
 });
 
 /**

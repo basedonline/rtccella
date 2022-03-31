@@ -39,6 +39,12 @@ add_action('wp-lemon/action/footer/before', function () {
    Timber::render('partials/footer/footer-before.twig', $context);
 });
 
+
+add_action('wp-lemon/action/body/after', function () {
+   $context = Timber::get_context();
+   Timber::render('partials/modal/modal.twig', $context);
+});
+
 add_action('wp-lemon/action/footer-widgets/before', function () {
    $context = Timber::get_context();
    Timber::render('partials/footer/footer-logobar.twig', $context);

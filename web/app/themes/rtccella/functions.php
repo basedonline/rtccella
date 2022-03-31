@@ -27,6 +27,9 @@ function parent_loaded()
 	$includes = [
 		'library/child-setup.php',
 		'library/classes/class-mailnotification.php',
+		'library/classes/class-send-weekly-job-alerts.php',
+		'library/classes/class-modal.php',
+		'library/classes/class-mailer.php',
 		'library/hooks.php',
 	];
 
@@ -41,3 +44,8 @@ function parent_loaded()
 	unset($file, $filepath);
 }
 add_action('parent_loaded', __NAMESPACE__ . '\\parent_loaded');
+
+function logger(string $prefix,  string $type, string $log_message)
+{
+	error_log('[' . date('d-m-Y H:i') . '] ' . $prefix . ' 🡆  ' . $type . ' 🡆 ' . $log_message . PHP_EOL, 3, ABSPATH . '../../application.log');
+}

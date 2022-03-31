@@ -11,6 +11,8 @@ namespace WP_Lemon\Child;
 
 use HighGround\Bulldozer\Site_Icons;
 
+use function DeliciousBrains\WPMDB\Container\DI\value;
+
 /**
  * Theme initialize
  *
@@ -68,6 +70,8 @@ function child_context($context)
 		]
 	);
 	$context['nav']['home'] = $home_nav;
+
+	wp_schedule_event(time(), 'hourly', 'my_hourly_event');
 	return $context;
 }
 add_filter('timber_context', __NAMESPACE__ . '\\child_context');
@@ -76,6 +80,6 @@ add_filter('timber_context', __NAMESPACE__ . '\\child_context');
  * Setup Site icons and manifest.
  */
 $icons                   = new Site_Icons();
-$icons->short_name       = 'Short name';
+$icons->short_name       = 'RTC Cella';
 $icons->background_color = '#f7d600';       // must be hex color.
 $icons->theme_color      = '#f7d600';       // must be hex color.
