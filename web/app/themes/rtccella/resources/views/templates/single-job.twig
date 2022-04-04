@@ -1,0 +1,22 @@
+{% extends 'layouts/app.twig' %}
+{% import 'macros/socials.twig' as socials %}
+{% block content %}
+    <article class="entry">
+        {% do action('wp-lemon/action/entry/before') %}
+        {% include 'partials/intro.twig' %}
+        {{ post.content }}
+        <section>
+            <h2>
+                Andere interessante vacatures
+            </h2>
+            <div class="latest-jobs">
+                <div class="latest-jobs__jobs">
+                    {% for post in more.items %}
+                        {% include 'components/cards/crd-job.twig' %}
+                    {% endfor %}
+                </div>
+                {% include 'components/cards/crd-job-alert.twig' %}
+            </div>
+        </section>
+    </article>
+{% endblock %}

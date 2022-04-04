@@ -4,10 +4,7 @@
     <div class="home-intro__top">
         <div class="row g-0">
             <div class="col-12 col-md-6 home-intro__alert order-md-2">
-                <button class="alert-button"
-                    id="alert-button"
-                    class="alert-button js-modal-trigger"
-                    data-type="alert">
+                <button class="alert-button js-modal-trigger" id="alert-button" data-type="alert">
                     Vacature alert
                     <i class="icon-notification"></i>
                 </button>
@@ -36,5 +33,7 @@
             </div>
         </div>
     </div>
-    {% include 'components/custom-search.twig' %}
+    {% include 'components/custom-search.twig' with {
+        engine: 'default'
+    } %}
 {% endblock %}

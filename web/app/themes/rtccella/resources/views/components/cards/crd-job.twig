@@ -1,0 +1,17 @@
+{% set hours = post.meta('hours') %}
+
+<a class="job-card" href="{{ post.link }}">
+    <header class="job-card__header">
+        <h3>
+            {{ post.title }}
+        </h3>
+    </header>
+    <footer class="job-card__footer">
+        {% include 'components/job-meta.twig' with {
+            class: 'job-card__meta'
+        } %}
+        <span class="job-card__link">
+            Bekijk vacature <i class="wp-lemon-icon-chevron-right"></i>
+        </span>
+    </footer>
+</a>

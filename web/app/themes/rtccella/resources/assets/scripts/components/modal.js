@@ -1,4 +1,4 @@
-import { Modal } from 'bootstrap'
+import Modal from 'bootstrap/js/src/modal'
 import newsletter from './newsletter';
 export default function modal() {
    const modalTriggers = document.querySelectorAll('.js-modal-trigger');

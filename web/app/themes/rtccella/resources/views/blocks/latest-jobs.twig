@@ -1,11 +1,10 @@
 {% extends 'layouts/block-wrap.twig' %}
 
 {% block block__inner %}
-	<div class="latest-jobs__jobs">
-		{% for job in latest_jobs %}
-			{% include 'components/cards/card-job.twig' %}
-		{% endfor %}
-	</div>
-	{% include 'components/cards/card-job-alert.twig' %}
-
+    <div class="latest-jobs__jobs">
+        {% for post in latest_jobs %}
+            {% include 'components/cards/crd-job.twig' %}
+        {% endfor %}
+    </div>
+    {% include 'components/cards/crd-job-alert.twig' %}
 {% endblock %}

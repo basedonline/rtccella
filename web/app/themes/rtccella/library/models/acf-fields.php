@@ -51,12 +51,12 @@ add_filter('wp-lemon/filter/model/acf-fields/job', function ($fields) {
             'bovenbouw' => __('Bovenbouw', 'wp-lemon'),
          ]
       ])
-      ->addSelect('type', [
+      ->addSelect('job_type', [
          'label' => __('Type baan', 'wp-lemon'),
          'allow_null' => 1,
          'choices' => [
             'leerkracht'    => __('Leerkracht', 'wp-lemon'),
-            'vervangend'    => __('vervangend', 'wp-lemon'),
+            'vervangend'    => __('Vervangend', 'wp-lemon'),
             'oop'           => __('Onderwijs Ondersteunend Personeel', 'wp-lemon'),
             'ib'            => __('IB\'er', 'wp-lemon'),
             'lio'           => __('Lio\'er', 'wp-lemon'),

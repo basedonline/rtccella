@@ -2,8 +2,13 @@
 	margin-top: 3rem;
 }
 
-.sidebar{
+.sidebar {
 
+	input {
+		background-color: $color-seashell;
+		border: 0;
+		border-radius: 5px;
+	}
 }
 
 .filters {
@@ -34,12 +39,6 @@
 
 .facet:last-child .facetwp-facet {
 	margin-bottom: 0 !important;
-}
-
-input {
-	background-color: $color-seashell;
-	border: 0;
-	border-radius: 5px;
 }
 
 .facetwp-slider-reset {

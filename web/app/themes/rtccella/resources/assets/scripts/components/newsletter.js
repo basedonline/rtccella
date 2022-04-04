@@ -34,13 +34,12 @@ function newsLetterSubscribe() {
                feedback('U bent al aangemeld voor onze nieuwsbrief.', true);
                break;
             case 'success':
-               feedback('U bent succesvol aangemeld voor onze nieuwsbrief.', true);
+               feedback('U bent succesvol aangemeld voor onze nieuwsbrief. We versturen de nieuwsbrief iedere maandagavond als we nieuwe vacatures hebben.', true);
                break;
             default:
                feedback('Er is iets mis gegaan.', false);
                break;
          }
-         // Do something with response.
       });
 }
 

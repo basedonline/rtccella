@@ -10,8 +10,12 @@
 
 	&__shapes {
 		position: relative;
-		height: 10vw;
+		height: 20vw;
 		overflow: hidden;
+
+		@include media-breakpoint-up(md) {
+			height: 10vw;
+		}
 	}
 
 	&__shape {
@@ -40,7 +44,6 @@
 	&__bottom-shapes {
 		position: relative;
 		height: 10vw;
-		overflow: hidden;
 	}
 
 	&__white {

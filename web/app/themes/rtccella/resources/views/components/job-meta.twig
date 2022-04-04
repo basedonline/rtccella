@@ -1,0 +1,28 @@
+{% set type = post.meta('location_type') %}
+{% if type == 'school' %}
+    {% set school_id = post.meta('school') %}
+    {% set school = Post(school_id) %}
+    {% set school_name = school.title %}
+    {% set city = school.location.city %}
+{% else %}
+    {% set city = post.location.city %}
+    {% set school_name = false %}
+{% endif %}
+<div class="{{ class }}">
+    {% if school_name %}
+        <i class="icon-school"></i>
+        {{ school_name }}
+    {% endif %}
+</div>
+<div class="{{ class }}">
+    {% if city %}
+        <i class="wp-lemon-icon-pin"></i>
+        {{ city }}
+    {% endif %}
+</div>
+<div class="{{ class }}">
+    {% if hours %}
+        <i class="icon-clock"></i>
+        {{ hours }} uur
+    {% endif %}
+</div>

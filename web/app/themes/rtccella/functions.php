@@ -26,7 +26,8 @@ function parent_loaded()
 
 	$includes = [
 		'library/child-setup.php',
-		'library/classes/class-mailnotification.php',
+		'library/classes/class-subscribe-weekly-job-alerts.php',
+		'library/classes/class-unsubscribe-weekly-job-alerts.php',
 		'library/classes/class-send-weekly-job-alerts.php',
 		'library/classes/class-modal.php',
 		'library/classes/class-mailer.php',

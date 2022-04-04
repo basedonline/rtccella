@@ -9,16 +9,9 @@
 
 namespace WP_Lemon\Child\Classes;
 
-new JobAlert();
-class JobAlert
+new SubscribeWeeklyJobAlerts();
+class SubscribeWeeklyJobAlerts
 {
-   protected $settings = [
-      'page_name' => 'Newsletter list',
-      'permission' => 'edit_pages',
-      'page_slug' => 'newsletter-list',
-      'success_message' => 'success'
-   ];
-
    public function __construct()
    {
       add_action('init', [$this, 'register_post_type']);
@@ -46,6 +39,7 @@ class JobAlert
       register_rest_route('rtc/v1', '/newsletter-list', [
          'methods' => 'POST',
          'methods'  => \WP_REST_Server::CREATABLE,
+         'permission_callback' => '__return_true',
          'callback' => function ($request) {
             $request = $request->get_body();
             $request = json_decode($request, true);
@@ -80,7 +74,7 @@ class JobAlert
    }
 }
 
-new JobAlert();
+new SubscribeWeeklyJobAlerts();
 
 add_filter('manage_subscribers_posts_columns',  __NAMESPACE__ . '\\subscribers_table_head');
 function subscribers_table_head($defaults)

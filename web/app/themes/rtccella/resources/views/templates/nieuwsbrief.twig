@@ -1,0 +1,17 @@
+{% extends 'layouts/app.twig' %}
+{% block content %}
+    <div class="entry">
+        {% do action('wp-lemon/action/entry/before') %}
+        <h1>
+            {{ title }}
+        </h1>
+        <p>
+            {{ message }}
+        </p>
+
+        <div class="theme-button-row">
+            <a class="theme-button" href="{{ site.home }}">Terug naar home</a>
+        </div>
+        {% do action('wp-lemon/action/entry/after') %}
+    </div>
+{% endblock %}

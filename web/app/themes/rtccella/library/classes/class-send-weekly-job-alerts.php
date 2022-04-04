@@ -9,7 +9,7 @@
 
 namespace WP_Lemon\Child\Classes;
 
-use Routes;
+
 use Timber\PostQuery;
 use Timber\Timber;
 use WP_Lemon\Classes\Mail;
@@ -32,7 +32,6 @@ class SendWeeklyJobAlerts
       $handler = new self();
       add_action('rtc_initiate_mails', array($handler, 'initiate_mails'));
       add_action('init',  [$handler, 'initiate_mails']);
-      dd_action('init', [$this, 'unsubscribe_endpoint']);
    }
 
    function add_cron()
@@ -82,18 +81,10 @@ class SendWeeklyJobAlerts
             'jobs'        => $jobs,
             'name'        => $name,
             'email'       => $email,
-            'unsubscribe' => get_home_url(null, 'afmelden') . '?hash=' . $unsubscribe_link,
+            'unsubscribe' => get_home_url(null, 'nieuwsbrief/uitschrijven/') . $subscriber->ID . '-' . $unsubscribe_link,
          ]);
-
+         //echo $message;
          //new Mail($email, $title, $message, __METHOD__);
       }
-   }
-
-   // TODO: Afmelden functie afmaken.
-   public function unsubscribe_endpoint()
-   {
-      Routes::map('afmelden', function ($params) {
-         Routes::load('templates/afmelden.php', null, false);
-      });
    }
 }
