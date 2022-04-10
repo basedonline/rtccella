@@ -1,8 +1,11 @@
 {% extends 'layouts/block-wrap.twig' %}
 
 {% block block__inner %}
-        {{fields.video}}
-        <h2>
-            {{ fields.title }}
-        </h2>
+    <figure class="wp-block-embed__wrapper">
+        {{ fields.video }}
+    </figure>
+
+    <h2>
+        {{ fields.title }}
+    </h2>
 {% endblock %}

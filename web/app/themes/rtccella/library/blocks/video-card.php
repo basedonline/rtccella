@@ -62,6 +62,7 @@ class VideoCard_Block extends BlockRenderer
 	 */
 	public function block_context($context): array
 	{
+		$this->classes[] = 'wp-embed-aspect-16-9 wp-has-aspect-ratio';
 		//$allowed_blocks  = apply_filters("wp-lemon/filter/blocks/{$this->slug}/allowed-blocks", ['core/heading', 'core/paragraph']);
 
 		$args = [
