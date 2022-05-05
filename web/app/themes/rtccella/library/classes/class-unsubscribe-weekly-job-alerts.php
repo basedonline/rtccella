@@ -13,18 +13,30 @@ use Routes;
 
 new ManageWeeklyJobAlerts();
 
+/**
+ * Manage the weekly alerts.
+ */
 class ManageWeeklyJobAlerts
 {
-   public function __construct()
-   {
-      add_action('init', [$this, 'unsubscribe_endpoint']);
-   }
+	/**
+	 * The constructor.
+	 */
+	public function __construct()
+	{
+		add_action('init', [$this, 'unsubscribe_endpoint']);
+	}
 
-   public function unsubscribe_endpoint()
-   {
-      Routes::map('nieuwsbrief/:action/:hash', function ($params) {
+	/**
+	 * Set up the unsubscribe endpoint.
+	 */
+	public function unsubscribe_endpoint()
+	{
+		Routes::map(
+			'nieuwsbrief/:action/:hash',
+			function ($params) {
 
-         Routes::load('nieuwsbrief.php', $params, false);
-      });
-   }
+				Routes::load('nieuwsbrief.php', $params, false);
+			}
+		);
+	}
 }

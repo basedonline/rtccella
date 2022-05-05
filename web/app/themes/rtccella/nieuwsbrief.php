@@ -17,28 +17,28 @@
 use Timber\Timber;
 
 global $params;
-$action = $params['action'];
+$job_action = $params['action'];
 $hash = $params['hash'];
 $context         = Timber::get_context();
 $timber_post     = Timber::get_post();
 
-if ('uitschrijven' == $action) {
-   $context['title'] = 'Uitschrijven';
-   $hash = explode("-", $hash);
-   $id = $hash[0];
-   $sha_hash = $hash[1];
+if ('uitschrijven' == $job_action) {
+	$context['title'] = 'Uitschrijven';
+	$hash = explode('-', $hash);
+	$job_id = $hash[0];
+	$sha_hash = $hash[1];
 
-   $email = get_the_title($id);
-   $name = get_field('name', $id);
-   $hash = sha1($email . $name);
-   if (!get_post_status($id)) {
-      $context['message'] = 'U bent reeds uitgeschreven voor jobalerts.';
-   } elseif ($hash == $sha_hash) {
-      wp_delete_post($id);
-      $context['message'] = 'U bent uitgeschreven voor jobalerts';
-   } else {
-      $context['message'] = 'Uw link is niet correct';
-   }
+	$email = get_the_title($job_id);
+	$name = get_field('name', $job_id);
+	$hash = sha1($email . $name);
+	if (!get_post_status($job_id)) {
+		$context['message'] = 'U bent reeds uitgeschreven voor jobalerts.';
+	} elseif ($hash == $sha_hash) {
+		wp_delete_post($id);
+		$context['message'] = 'U bent uitgeschreven voor jobalerts';
+	} else {
+		$context['message'] = 'Uw link is niet correct';
+	}
 }
 
 

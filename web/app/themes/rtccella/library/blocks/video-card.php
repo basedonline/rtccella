@@ -63,10 +63,10 @@ class VideoCard_Block extends BlockRenderer
 	public function block_context($context): array
 	{
 		$this->classes[] = 'wp-embed-aspect-16-9 wp-has-aspect-ratio';
-		//$allowed_blocks  = apply_filters("wp-lemon/filter/blocks/{$this->slug}/allowed-blocks", ['core/heading', 'core/paragraph']);
+		// $allowed_blocks  = apply_filters("wp-lemon/filter/blocks/{$this->slug}/allowed-blocks", ['core/heading', 'core/paragraph']);
 
 		$args = [
-			//'InnerBlocks'     => '<InnerBlocks allowedBlocks="' . esc_attr(wp_json_encode($allowed_blocks)) . '" />',
+			// 'InnerBlocks'     => '<InnerBlocks allowedBlocks="' . esc_attr(wp_json_encode($allowed_blocks)) . '" />',
 		];
 
 		return array_merge($context, $args);
@@ -84,17 +84,22 @@ class VideoCard_Block extends BlockRenderer
 	public function add_fields(): object
 	{
 		$this->registered_fields
-			->addText('title', [
-				'label' => 'titel',
-				'instructions' => 'dit wordt de titel onder de video',
-				'required' => 1,
-			])
-			->addOembed('video', [
-				'label' => 'video',
-				'instructions' => 'dit wordt de video',
-				'required' => 1,
-			]);
-
+			->addText(
+				'title',
+				[
+					'label' => 'titel',
+					'instructions' => 'dit wordt de titel onder de video',
+					'required' => 1,
+				]
+			)
+			->addOembed(
+				'video',
+				[
+					'label' => 'video',
+					'instructions' => 'dit wordt de video',
+					'required' => 1,
+				]
+			);
 
 		return $this->registered_fields;
 	}

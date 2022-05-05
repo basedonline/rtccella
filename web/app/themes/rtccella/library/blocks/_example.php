@@ -62,10 +62,10 @@ class Example_Block extends BlockRenderer
 	 */
 	public function block_context($context): array
 	{
-		//$allowed_blocks  = apply_filters("wp-lemon/filter/blocks/{$this->slug}/allowed-blocks", ['core/heading', 'core/paragraph']);
+		// $allowed_blocks  = apply_filters("wp-lemon/filter/blocks/{$this->slug}/allowed-blocks", ['core/heading', 'core/paragraph']);
 
 		$args = [
-			//'InnerBlocks'     => '<InnerBlocks allowedBlocks="' . esc_attr(wp_json_encode($allowed_blocks)) . '" />',
+			// 'InnerBlocks'     => '<InnerBlocks allowedBlocks="' . esc_attr(wp_json_encode($allowed_blocks)) . '" />',
 		];
 
 		return array_merge($context, $args);

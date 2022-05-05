@@ -36,7 +36,7 @@ class LatestJobs_Block extends BlockRenderer
 			'name'        => 'latest-jobs',
 			'title'       => __('laatste vacatures', 'wp-lemon-child'),
 			'description' => __('Toont de laatste 3 vacatures en een vacature alert card', 'wp-lemon-child'),
-			'category'    => 'wp-lemon-blocks',
+			'category'    => 'wp-lemon-child-blocks',
 			'icon'        => 'editor-table',
 			'keywords'    => [
 				_x('These', 'Block keyword', 'wp-lemon-child'),
@@ -64,22 +64,13 @@ class LatestJobs_Block extends BlockRenderer
 	 */
 	public function block_context($context): array
 	{
-		//$allowed_blocks  = apply_filters("wp-lemon/filter/blocks/{$this->slug}/allowed-blocks", ['core/heading', 'core/paragraph']);
-
-		$args = [
-			//'InnerBlocks'     => '<InnerBlocks allowedBlocks="' . esc_attr(wp_json_encode($allowed_blocks)) . '" />',
-		];
-
-		// return array_merge($context, $args);
-
 		$latest_jobs = latest_items_query('job', 3);
 		$context['latest_jobs'] = $latest_jobs;
 		$context['card_type'] = 'jobs';
 		$context['holder_classes'] = 'col-12 col-md-6 col-lg-4';
-		$message = __("There aren't any latest jobs, so this block will be empty.", "wp-lemon");
+		$message = __("There aren't any latest jobs, so this block will be empty.", 'wp-lemon-child');
 
-
-		if ($latest_jobs->found_posts == 0) {
+		if (0 == $latest_jobs->found_posts) {
 			parent::add_notification($message, 'warning');
 		}
 

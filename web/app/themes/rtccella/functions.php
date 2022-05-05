@@ -46,7 +46,16 @@ function parent_loaded()
 }
 add_action('parent_loaded', __NAMESPACE__ . '\\parent_loaded');
 
-function logger(string $prefix,  string $type, string $log_message)
+
+/**
+ * Custom log function for this theme.
+ *
+ * @param string $prefix  The prefix to use for the log.
+ * @param string $type   The type of log.
+ * @param string $log_message The message to log.
+ * @return void
+ */
+function logger(string $prefix, string $type, string $log_message)
 {
 	error_log('[' . date('d-m-Y H:i') . '] ' . $prefix . ' 🡆  ' . $type . ' 🡆 ' . $log_message . PHP_EOL, 3, ABSPATH . '../../application.log');
 }

@@ -29,9 +29,9 @@ $context['more'] = [
 	'type' => 'story',
 	'items' => other_items_query('story', 3, get_the_ID()),
 	'button' => [
-		'link' =>  get_permalink($archive_page_id),
+		'link' => get_permalink($archive_page_id),
 		'text' => 'Alle verhalen',
-	]
+	],
 ];
 
 Timber::render(

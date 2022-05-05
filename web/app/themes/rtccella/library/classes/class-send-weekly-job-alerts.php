@@ -9,82 +9,107 @@
 
 namespace WP_Lemon\Child\Classes;
 
-
-use Timber\PostQuery;
 use Timber\Timber;
 use WP_Lemon\Classes\Mail;
 
 use function WP_Lemon\Child\logger;
 
 SendWeeklyJobAlerts::register();
-date_default_timezone_set('Europe/Amsterdam');
+
+/**
+ * The class that initiates the weekly job alerts.
+ */
 class SendWeeklyJobAlerts
 {
-   const LOG_TYPE = 'weekly-job-alerts';
-   const TIME = '17:18:00';
-   /**
-    * Handle the registration of the current class.
-    *
-    * @return void
-    */
-   public static function register()
-   {
-      $handler = new self();
-      add_action('rtc_initiate_mails', array($handler, 'initiate_mails'));
-      add_action('init',  [$handler, 'initiate_mails']);
-   }
+	/**
+	 * Log name
+	 */
+	const LOG_TYPE = 'weekly-job-alerts';
 
-   function add_cron()
-   {
-      wp_schedule_event(strtotime(self::TIME), 'daily', 'rtc_initiate_mails', $args = array());
-   }
+	/**
+	 * Time to sent the mails.
+	 */
+	const TIME = '17:00';
 
-   public static function initiate_mails()
-   {
-      if (date('l') !== 'Tuesday') {
-         //return;
-      }
 
-      $args        = array(
-         'posts_per_page'    => -1,
-         'post_type'         => 'job',
-         'post_status'       => array('publish'),
-         'date_query'        => array(
-            'after'        => 'previous week Tuesday',
-         )
-      );
-      $jobs = new PostQuery($args);
-      if (empty($jobs)) {
-         logger(__METHOD__, self::LOG_TYPE, 'No jobs found');
-         return;
-      }
+	/**
+	 * Handle the registration of the current class.
+	 *
+	 * @return void
+	 */
+	public static function register()
+	{
+		$handler = new self();
+		add_action('init', [$handler, 'add_cron']);
+		add_action('rtc_initiate_mails', [$handler, 'mail_job']);
+	}
 
-      $args = [
-         'post_type' => 'subscribers',
-         'post_status' => 'publish',
-         'posts_per_page' => -1,
-      ];
+	/**
+	 * Add the cron job.
+	 *
+	 * @return void
+	 */
+	public function add_cron()
+	{
+		if (!wp_next_scheduled('rtc_initiate_mails')) {
+			$date = new \DateTime();
+			$date->modify('next tuesday ' . self::TIME);
+			wp_schedule_event(strtotime(self::TIME), 'weekly', 'rtc_initiate_mails', $args = []);
+		}
+	}
 
-      $subscribers = get_posts($args);
+	/**
+	 * Initiate the mails.
+	 *
+	 * @return void
+	 */
+	public static function mail_job()
+	{
+		$args        = [
+			'posts_per_page'    => -1,
+			'post_type'         => 'job',
+			'post_status'       => ['publish'],
+			'date_query'        => [
+				'after'        => 'previous week Tuesday',
+			],
+		];
 
-      if (empty($subscribers)) {
-         logger(__METHOD__, self::LOG_TYPE, 'No subscribers found');
-         return;
-      }
+		$jobs = Timber::get_posts($args);
 
-      foreach ($subscribers as $subscriber) {
-         $email = get_the_title($subscriber->ID);
-         $name = get_field('name', $subscriber->ID);
-         $title = 'De nieuwe vacatures op RTC Cella';
-         $unsubscribe_link = sha1($email . $name);
-         $message = Timber::compile('mail/weekly-job-alert.twig', [
-            'jobs'        => $jobs,
-            'name'        => $name,
-            'email'       => $email,
-            'unsubscribe' => get_home_url(null, 'nieuwsbrief/uitschrijven/') . $subscriber->ID . '-' . $unsubscribe_link,
-         ]);
-         //echo $message;
-         //new Mail($email, $title, $message, __METHOD__);
-      }
-   }
+		if (empty($jobs)) {
+			logger(__METHOD__, self::LOG_TYPE, 'No jobs found posted in the last week.');
+			return;
+		}
+
+		$args = [
+			'post_type' => 'subscribers',
+			'post_status' => 'publish',
+			'posts_per_page' => -1,
+		];
+
+		$subscribers = get_posts($args);
+
+		if (empty($subscribers)) {
+			logger(__METHOD__, self::LOG_TYPE, 'No subscribers found');
+			return;
+		}
+
+		foreach ($subscribers as $subscriber) {
+			$email = get_the_title($subscriber->ID);
+			$name = get_field('name', $subscriber->ID);
+			$title = 'De nieuwste vacatures op RTC Cella';
+			$unsubscribe_link = sha1($email . $name);
+			$message = Timber::compile(
+				'mail/weekly-job-alert.twig',
+				[
+					'jobs'        => $jobs,
+					'name'        => $name,
+					'email'       => $email,
+					'unsubscribe' => get_home_url(null, 'nieuwsbrief/uitschrijven/') . $subscriber->ID . '-' . $unsubscribe_link,
+				]
+			);
+
+			new Mail($email, $title, $message, __METHOD__);
+		}
+	}
 }

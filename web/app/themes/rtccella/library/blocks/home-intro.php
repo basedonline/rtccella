@@ -86,7 +86,7 @@ class HomeIntro_Block extends BlockRenderer
 			->addImage(
 				'image',
 				[
-					'label' => __('Image', 'wp-lemon'),
+					'label' => __('Image', 'wp-lemon-child'),
 					'instructions' => '',
 					'return_format' => 'id',
 					'preview_size' => 'thumbnail',
