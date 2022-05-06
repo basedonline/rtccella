@@ -53,8 +53,9 @@ class SendWeeklyJobAlerts
 	{
 		if (!wp_next_scheduled('rtc_initiate_mails')) {
 			$date = new \DateTime();
-			$date->modify('next tuesday ' . self::TIME);
-			wp_schedule_event(strtotime(self::TIME), 'weekly', 'rtc_initiate_mails', $args = []);
+			$date->modify('next monday ' . self::TIME);
+			$timestamp = $date->getTimestamp();
+			wp_schedule_event($timestamp, 'weekly', 'rtc_initiate_mails', $args = []);
 		}
 	}
 

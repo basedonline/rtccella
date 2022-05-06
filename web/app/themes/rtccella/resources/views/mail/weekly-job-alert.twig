@@ -18,14 +18,21 @@
             {% set school_name = false %}
         {% endif %}
 
-        <h3>
-            <a href=" {{ job.link }}">{{ job.title }}</a>
-        </h3>
         <table>
+            <tr>
+                {% if job.title %}
+                    <td>
+                        <strong>Vacature:</strong>
+                    </td>
+                    <td>
+                        {{ job.title }}
+                    </td>
+                {% endif %}
+            </tr>
             <tr>
                 {% if school_name %}
                     <td>
-                        <strong>Naam school:</strong>
+                        <strong>School:</strong>
                     </td>
                     <td>
                         {{ school_name }}
@@ -48,9 +55,16 @@
                     {{ hours }}
                 </td>
             </tr>
+            <tr>
+                <td colspan="2">
+                    <br />
+                    <p>
+                        {{ lemon_excerpt(job, 300) }}
+                    </p>
+                    <a href=" {{ job.link }}"><strong>Lees de hele vacature</strong></a>
+                </td>
+            </tr>
         </table>
-        <p>
-            {{ lemon_excerpt(job, 300) }}
-        </p>
+        <br /><br />
     {% endfor %}
 {% endblock %}

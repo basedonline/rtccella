@@ -71,7 +71,6 @@ function child_context($context)
 	);
 	$context['nav']['home'] = $home_nav;
 
-	wp_schedule_event(time(), 'hourly', 'my_hourly_event');
 	return $context;
 }
 add_filter('timber_context', __NAMESPACE__ . '\\child_context');

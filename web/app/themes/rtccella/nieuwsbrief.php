@@ -25,16 +25,15 @@ $timber_post     = Timber::get_post();
 if ('uitschrijven' == $job_action) {
 	$context['title'] = 'Uitschrijven';
 	$hash = explode('-', $hash);
-	$job_id = $hash[0];
+	$job_id = (int) $hash[0];
 	$sha_hash = $hash[1];
-
 	$email = get_the_title($job_id);
 	$name = get_field('name', $job_id);
 	$hash = sha1($email . $name);
 	if (!get_post_status($job_id)) {
 		$context['message'] = 'U bent reeds uitgeschreven voor jobalerts.';
 	} elseif ($hash == $sha_hash) {
-		wp_delete_post($id);
+		wp_delete_post($job_id);
 		$context['message'] = 'U bent uitgeschreven voor jobalerts';
 	} else {
 		$context['message'] = 'Uw link is niet correct';
