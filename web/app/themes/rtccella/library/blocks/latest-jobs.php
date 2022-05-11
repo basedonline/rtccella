@@ -68,9 +68,9 @@ class LatestJobs_Block extends BlockRenderer
 		$context['latest_jobs'] = $latest_jobs;
 		$context['card_type'] = 'jobs';
 		$context['holder_classes'] = 'col-12 col-md-6 col-lg-4';
-		$message = __("There aren't any latest jobs, so this block will be empty.", 'wp-lemon-child');
+		$message = __("There aren't any jobs, so this block will be empty.", 'wp-lemon-child');
 
-		if (0 == $latest_jobs->found_posts) {
+		if (empty($latest_jobs)) {
 			parent::add_notification($message, 'warning');
 		}
 

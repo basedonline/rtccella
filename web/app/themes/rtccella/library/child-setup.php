@@ -80,5 +80,5 @@ add_filter('timber_context', __NAMESPACE__ . '\\child_context');
  */
 $icons                   = new Site_Icons();
 $icons->short_name       = 'RTC Cella';
-$icons->background_color = '#f7d600';       // must be hex color.
-$icons->theme_color      = '#f7d600';       // must be hex color.
+$icons->background_color = '#f0f0f0';       // must be hex color.
+$icons->theme_color      = '#0090df';       // must be hex color.

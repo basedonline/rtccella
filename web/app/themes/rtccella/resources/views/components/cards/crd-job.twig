@@ -7,9 +7,11 @@
         </h3>
     </header>
     <footer class="job-card__footer">
-        {% include 'components/job-meta.twig' with {
-            class: 'job-card__meta'
-        } %}
+        <div class="job-card__metaholder">
+            {% include 'components/job-meta.twig' with {
+                class: 'job-card__meta'
+            } %}
+        </div>
         <span class="job-card__link">
             Bekijk vacature <i class="wp-lemon-icon-chevron-right"></i>
         </span>

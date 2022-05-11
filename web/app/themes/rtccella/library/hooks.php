@@ -87,7 +87,7 @@ add_filter(
 
 add_filter(
 	'wp-lemon/filter/card/content/footer',
-	function ($content, $id, $fields) {
+	function ($content, $job_id, $fields) {
 		$context = Timber::get_context();
 		$context['fields'] = $fields;
 		return Timber::compile('components/cards/card-footer.twig', $context);
@@ -146,23 +146,21 @@ add_filter('register_post_type_args', __NAMESPACE__ . '\\custom_post_type_args',
  * Filter address send to.
  */
 add_filter('fluentform_email_to', function ($address, $notification, $submittedData, $form) {
+	$form_id = (int) $form->id;
 
-	if (3 == $form->id) {
+	if (3 !== $form_id) {
 		return $address;
 	}
 
-	$id = $form->fields['id'];
-	$location_type = get_field('location_type', $id);
+	$job_id = (int) $submittedData['id'];
+	$location_type = get_field('location_type', $job_id);
 
 	if ('own' == $location_type) {
-		$email = get_field('apply_mailaddress', $id);
+		$email = get_field('apply_mailaddress', $job_id);
 	} else {
-		$linked_school = get_field('school', $id);
-		$linked_school = reset($linked_school);
+		$linked_school = get_field('school', $job_id);
 		$email = get_field('apply_mailaddress', $linked_school);
 	}
 
-	if (empty($email)) {
-		return empty($email) ? $address : $email;
-	}
+	return empty($email) ? $address : $email;
 }, 10, 4);

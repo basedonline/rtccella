@@ -13,12 +13,14 @@
 		display: grid;
 		grid-template-rows: repeat(3, max-content);
 		gap: 24px;
+		margin-bottom: 24px;
 
 		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
+		}
 
-			a {
-				margin-bottom: 0;
-			}
+		a {
+			margin-bottom: 0;
 		}
 	}
 

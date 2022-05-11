@@ -8,21 +8,21 @@
     {% set city = post.location.city %}
     {% set school_name = false %}
 {% endif %}
-<div class="{{ class }}">
-    {% if school_name %}
+{% if school_name %}
+    <div class="{{ class }}">
         <i class="icon-school"></i>
         {{ school_name }}
-    {% endif %}
-</div>
-<div class="{{ class }}">
-    {% if city %}
+    </div>
+{% endif %}
+{% if city %}
+    <div class="{{ class }}">
         <i class="wp-lemon-icon-pin"></i>
         {{ city }}
-    {% endif %}
-</div>
-<div class="{{ class }}">
-    {% if hours %}
+    </div>
+{% endif %}
+{% if hours %}
+    <div class="{{ class }}">
         <i class="icon-clock"></i>
         {{ hours }} uur
-    {% endif %}
-</div>
+    </div>
+{% endif %}

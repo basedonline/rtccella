@@ -1,0 +1,15 @@
+.apply-form {
+	overflow: auto;
+
+	&__inner {
+		padding: 20px;
+		margin-top: 50px;
+		background-color: white;
+		border-radius: 20px;
+	}
+
+	h2 {
+		margin-top: 0;
+		color: $color-deep-koamaru;
+	}
+}

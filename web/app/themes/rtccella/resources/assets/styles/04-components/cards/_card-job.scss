@@ -21,13 +21,31 @@
 		}
 	}
 
+	&__metaholder {
+		@include media-breakpoint-up(md) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
 	&__meta {
-		margin-right: 15px;
+		margin-bottom: 16px;
+
+		@include media-breakpoint-up(md) {
+			margin-right: 16px;
+			margin-bottom: 0;
+		}
 	}
 
 	&__footer {
 		display: flex;
-		align-items: center;
+		flex-wrap: wrap;
+		gap: 7.5px;
+		align-items: flex-end;
+
+		@include media-breakpoint-up(md) {
+			align-items: center;
+		}
 	}
 
 	&__link {

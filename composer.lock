@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6e8601b33c64c37099e9ccff999f5e4",
+    "content-hash": "cfc70c3c25e13c1d203af26168c3cb1d",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -732,22 +732,22 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.9.2",
+            "version": "5.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.9.2"
+                "reference": "5.9.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/refs/tags/5.9.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/refs/tags/5.9.3"
             },
             "require": {
                 "php": ">=5.3.2",
                 "roots/wordpress-core-installer": ">=1.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "5.9.2"
+                "wordpress/core-implementation": "5.9.3"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -786,7 +786,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-03-11T00:36:42+00:00"
+            "time": "2022-04-06T02:26:36+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -1005,11 +1005,11 @@
         },
         {
             "name": "satispress/facetwp",
-            "version": "3.9.6",
+            "version": "4.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.studiolemon.nl/satispress/facetwp/3.9.6",
-                "shasum": "6b1553371ecebb8e818d7a4a77d8de3bd591333f"
+                "url": "https://packagist.studiolemon.nl/satispress/facetwp/4.0.1",
+                "shasum": "a053449dc120d317fa1cb9d036262cfafdcd47d5"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1136,11 +1136,11 @@
         },
         {
             "name": "satispress/wp-rocket",
-            "version": "3.11.1",
+            "version": "3.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.studiolemon.nl/satispress/wp-rocket/3.11.1",
-                "shasum": "8c0f1bd967f472f3cea7c209e2dd4dac74424836"
+                "url": "https://packagist.studiolemon.nl/satispress/wp-rocket/3.11.2",
+                "shasum": "d3eaca2427887e4204f6df5dff0a9b80d78d3393"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2151,15 +2151,15 @@
         },
         {
             "name": "wpackagist-plugin/cookie-law-info",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookie-law-info/",
-                "reference": "tags/2.1.1"
+                "reference": "tags/2.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookie-law-info.2.1.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookie-law-info.2.1.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
