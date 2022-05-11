@@ -30,6 +30,8 @@ $context['intro'] = [
 	'title'    => get_the_title(),
 ];
 
+$context['apply_form'] = apply_shortcodes('[fluentform id="3"]');
+
 $context['more'] = [
 	'type' => 'job',
 	'title' => 'Andere interessante vacatures',

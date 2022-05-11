@@ -5,6 +5,13 @@
         {% do action('wp-lemon/action/entry/before') %}
         {% include 'partials/intro.twig' %}
         {{ post.content }}
+
+        <div class="apply-form">
+            <h2>
+                Solliciteer direct
+            </h2>
+            {{ apply_form }}
+        </div>
         <section>
             <h2>
                 Andere interessante vacatures

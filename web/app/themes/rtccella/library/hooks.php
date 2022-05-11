@@ -139,3 +139,30 @@ function custom_post_type_args($args, $post_type)
 	return $args;
 }
 add_filter('register_post_type_args', __NAMESPACE__ . '\\custom_post_type_args', 20, 2);
+
+
+
+/**
+ * Filter address send to.
+ */
+add_filter('fluentform_email_to', function ($address, $notification, $submittedData, $form) {
+
+	if (3 == $form->id) {
+		return $address;
+	}
+
+	$id = $form->fields['id'];
+	$location_type = get_field('location_type', $id);
+
+	if ('own' == $location_type) {
+		$email = get_field('apply_mailaddress', $id);
+	} else {
+		$linked_school = get_field('school', $id);
+		$linked_school = reset($linked_school);
+		$email = get_field('apply_mailaddress', $linked_school);
+	}
+
+	if (empty($email)) {
+		return empty($email) ? $address : $email;
+	}
+}, 10, 4);

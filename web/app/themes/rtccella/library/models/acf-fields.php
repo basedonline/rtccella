@@ -13,7 +13,7 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 
 
 add_filter(
-	'wp-lemon-child/filter/model/acf-fields/job',
+	'wp-lemon/filter/model/acf-fields/job',
 	function ($fields) {
 		$fields
 			->removeField('salary')
@@ -53,11 +53,20 @@ add_filter(
 				]
 			)
 			->conditional('location_type', '==', 'own')
-			->addSelect(
+			->addEmail('apply_mailaddress', [
+				'label' => 'E-mailadres voor sollicitatie',
+				'instructions' => '',
+				'required' => 1,
+			])
+			->conditional('location_type', '==', 'own')
+			->addCheckbox(
 				'groups',
 				[
 					'label' => __('Groep', 'wp-lemon-child'),
 					'allow_null' => 1,
+					'wrapper' => [
+						'width' => '50',
+					],
 					'choices' => [
 						'onderbouw' => __('Onderbouw', 'wp-lemon-child'),
 						'middenbouw' => __('Bovenbouw', 'wp-lemon-child'),
@@ -65,11 +74,14 @@ add_filter(
 					],
 				]
 			)
-			->addSelect(
+			->addCheckbox(
 				'job_type',
 				[
 					'label' => __('Type baan', 'wp-lemon-child'),
 					'allow_null' => 1,
+					'wrapper' => [
+						'width' => '50',
+					],
 					'choices' => [
 						'leerkracht'    => __('Leerkracht', 'wp-lemon-child'),
 						'vervangend'    => __('Vervangend', 'wp-lemon-child'),
@@ -118,6 +130,11 @@ add_action(
 			]
 		);
 		$school_fields
+			->addEmail('apply_mailaddress', [
+				'label' => 'E-mailadres voor sollicitatie',
+				'instructions' => 'Naar welk E-mailadres wordt de sollicitatie verstuurd?',
+				'required' => 1,
+			])
 			->addGoogleMap(
 				'location',
 				[
